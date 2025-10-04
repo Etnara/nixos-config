@@ -1,4 +1,4 @@
-{ ... }:
+{ userSettings, ... }:
 
 {
 
@@ -6,9 +6,9 @@
     enable = true;
 
     profiles = {
-      Etnara = {
+      ${userSettings.username} = {
         id = 0;
-        name = "Etnara";
+        name = userSettings.name;
         isDefault = true;
         extensions.force = true;
       };
@@ -20,7 +20,7 @@
     };
 
     policies = {
-      DefaultDownloadDirectory = "\${home}/Desktop";
+      DefaultDownloadDirectory = "/home/${userSettings.username}/Desktop";
       Preferences = {
         # General
         "browser.startup.homepage" = "chrome://browser/content/blanktab.html";
@@ -47,27 +47,7 @@
         "browser.urlbar.suggest.engines" = false;
         # Borealis
         "browser.fixup.domainsuffixwhitelist.borealis" = true;
-        # Doesn't work
-        # TODO: Remove gaps beside URL bar
-        /*"browser.uiCustomization.state" = builtins.toJSON {
-          placements = {
-            "nav-bar" = [
-              "back-button"
-              "forward-button"
-              "stop-reload-button"
-              "urlbar-container"
-              "downloads-button"
-              "unified-extensions-button"
-            ];
-          };
-        };*/
       };
-      # TODO: Remove extra search engines. Requires ESR
-      /*
-      SearchEngines = {
-        Remove = ["DuckDuckGo Lite"];
-      };
-      */
       ExtensionSettings = {
         "{6b733b82-9261-47ee-a595-2dda294a4d08}" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/yomitan/latest.xpi";
@@ -128,8 +108,10 @@
   };
 
   # userChrome Customisations
-  home.file.".librewolf/Etnara".source = ./userChrome;
-  home.file.".librewolf/Etnara".recursive = true;
+  home.file.".librewolf/${userSettings.username}" = {
+    source = ./userChrome;
+    recursive = true;
+  };
 
 }
 
