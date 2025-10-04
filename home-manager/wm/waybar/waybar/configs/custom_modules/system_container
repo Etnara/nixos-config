@@ -1,0 +1,168 @@
+{
+
+    "group/system-container": {
+        "orientation": "horizontal",
+        "modules": [
+            "group/battery-grp",
+            // "group/nix-updates-grp",
+            "group/pulseaudio-grp",
+            "group/backlight-grp"
+        ]
+    },
+
+    "group/nix-updates-grp": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/nix-updates",
+            "custom/nix-updates#text"
+        ]
+    },
+    "group/pulseaudio-grp": {
+        "orientation": "horizontal",
+        "modules": [
+            "pulseaudio",
+            "pulseaudio#text"
+        ]
+    },
+    "group/battery-grp": {
+        "orientation": "horizontal",
+        "modules": [
+            "battery",
+            "battery#text"
+        ]
+    },
+    "group/backlight-grp": {
+        "orientation": "horizontal",
+        "modules": [
+            "backlight",
+            "backlight#text"
+        ]
+    },
+
+
+
+    "custom/nix-updates": {
+        "format": "󪥔",
+        "tooltip": false
+    },
+    
+
+    "custom/nix-updates": {
+      "exec": "~/.config/waybar/scripts/checkupdates",
+      "signal": 12,
+      "on-click": "", // refresh on click
+      "on-click-right": "rm ~/.cache/nix-update-last-run", // force an update
+      "interval": 3600, // refresh every hour
+      "tooltip": true,
+      "return-type": "json",
+      "format": "{} {icon}",
+      "format-icons": {
+        "has-updates": "", // icon when updates needed
+        "updated": "" // icon when all packages updated
+      },
+    },
+
+    "custom/nix-updates#text": {
+      "exec": "~/.config/waybar/scripts/checkupdates",
+      "signal": 12,
+      "on-click": "", // refresh on click
+      "on-click-right": "rm ~/.cache/nix-update-last-run", // force an update
+      "interval": 3600, // refresh every hour
+      "tooltip": true,
+      "return-type": "json",
+      "format": "{} {icon}",
+      "format-icons": {
+        "has-updates": "", // icon when updates needed
+        "updated": "" // icon when all packages updated
+      },
+    },
+
+    "custom/pacman-update#text": {
+        "format": "<b>{}</b>",
+        "interval": 60,
+        "exec": "~/.config/waybar/scripts/pacman-update-icon.sh",
+        "tooltip": false,
+        "return-type": "json"
+    },
+
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-bluetooth": "{icon}",
+        "format-bluetooth-muted": "{icon}",
+        "tooltip": false,
+        "format-muted": "󪤑",
+        "format-icons": {
+            "headphone": "󪥆",
+            "hands-free": "󪤥",
+            "headset": "󪥆",
+            "phone": "󪤥",
+            "portable": "󪤥",
+            "car": "󪤬",
+            "default": [
+                "󪤦",
+                "󪤦",
+                "󪤒"
+            ]
+        },
+        "on-click": "pavucontrol",
+        "reverse-scrolling": true
+    },
+    "pulseaudio#text": {
+        "tooltip": false,
+        "format": "<b>{volume}</b>",
+        "format-bluetooth": "<b>{volume}</b>",
+        "reverse-scrolling": true
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}",
+        "format-icons": [
+            "󪥖",
+            "󪥝",
+            "󪥞",
+            "󪥞",
+            "󪥟"
+        ],
+        "tooltip": false
+    },
+    "battery#text": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "<b>{capacity}</b>",
+        "tooltip": false
+    },
+
+    
+    "backlight": {
+        "device": "DP-1",
+        "format": "{icon}",
+        "tooltip": false,
+        "format-icons": [
+            "󪤪",
+            "󪤪",
+            "󪤪",
+            "󪤪",
+            "󪤪",
+            "󪤪",
+            "󪤪",
+            "󪤪",
+            "󪤪"
+        ],
+        "on-click": "",
+        "reverse-scrolling": true
+    },
+    "backlight#text": {
+        "device": "DP-1",
+        "format": "<b>{percent}</b>",
+        "interval": 15,
+        "exec": "",
+        "tooltip": false,
+        "reverse-scrolling": true
+    }
+}

@@ -1,0 +1,119 @@
+{
+  "include": [
+    "~/.config/waybar/configs/custom_modules/modules",
+    "~/.config/waybar/configs/custom_modules/privacy_container",
+    "~/.config/waybar/configs/custom_modules/system_container",
+    "~/.config/waybar/configs/custom_modules/app_title"
+  ],
+  "layer": "top",
+  "height": 20,
+  "margin-top": 0,
+  "margin-left": 0,
+  "margin-bottom": 0,
+  "margin-right": 0,
+  "spacing": 0,
+  "modules-left": [
+    "hyprland/workspaces",
+    "custom/arrow-dec",
+    "hyprland/window",
+  ],
+  "modules-center": [
+    "tray"
+  ],
+  "modules-right": [
+    "cpu",
+    "custom/dot",
+    "memory",
+    "custom/dot",
+    "network",
+    "custom/left-arrw",
+    "group/system-container",
+    "custom/dot-alt",
+    "clock",
+  ],
+  "hyprland/workspaces": {
+    "all-outputs": false,
+    "active-only": "false",
+    "on-click": "activate",
+    "format": "<big>{icon}</big><span color = '#98ff98'> 󪤖 </span>{windows}",
+  "format-window-separator": " ",
+  "window-rewrite-default": "",
+  "window-rewrite": {
+    "title<.*youtube.*>": "",
+    "class<librewolf>": "",
+    "class<firefox> title<.*github.*>": "",
+    "kitty": "",
+    "librewolf": "󪥲",
+    "discord": "",
+    ".virt-manager-wrapped": "",
+    "org.keepassxc.KeePassXC": "",
+    "Nautilus": "",
+    "libreoffice-writer": "",
+    "libreoffice-impress": "",
+    "libreoffice-calc": "",
+    "steam": "󰓓",
+    "org.kde.kdenlive": "",
+	},
+    "format-icons": {
+      "1": "一",
+      "2": "二",
+      "3": "三",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "十",
+      "urgent": "急",
+      "default": "常"
+    }
+  },
+  "hyprland/window": {
+    "format": "{class}",
+    "rewrite": {
+      "kitty": "Kitty",
+      "librewolf": "LibreWolf",
+      "org.gnome.Nautilus": "Nautilus",
+      "discord": "Discord",
+      "libreoffice-writer": "LibreOffice Writer",
+      "libreoffice-impress": "LibreOffice Impress",
+      "libreoffice-calc": "LibreOffice Calc",
+      "steam": "Steam",
+      "org.kde.kdenlive": "Kdenlive",
+
+    },
+  },
+  "tray": {
+    "icon-size": 20,
+    "spacing": 8
+  },
+
+  "cpu": {
+    "interval": 5,
+    "format": "󪥋 <b>{usage}%</b>",
+    "max-length": 10,
+    "on-click": "",
+    "tooltip": false
+  },
+  "memory": {
+    "interval": 60,
+    "format": "󪤲 <b>{used}G</b>",
+    "max-length": 10,
+    "tooltip": false
+  },
+  "network": {
+    "format-wifi": "{icon}",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+    "format-ethernet": "",
+    "tooltip-format-ethernet": "{essid}",
+    "format-disconnected": "󰤮",
+    "tooltip-format-disconnected": "Disconnected",
+    "format-icons": [ "󰤯", "󰤟", "󰤢", "󰤥", "󰤨" ],
+    "on-click": "hyprctl dispatch exec '[float] kitty nmtui'",
+  },
+  "clock": {
+    "tooltip-format": "{:%d %B %Y\n%A}",
+  },
+  
+}

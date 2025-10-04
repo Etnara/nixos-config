@@ -1,0 +1,4 @@
+{
+  userPassword = "";
+  smbPassword = "";
+}
