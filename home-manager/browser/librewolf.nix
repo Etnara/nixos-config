@@ -116,12 +116,13 @@
           installation_mode = "force_installed";
           private_browsing = true;
         };
-        # MANUAL: https://github.com/catppuccin/firefox
-        # "FirefoxColor@mozilla.com" = {
-        #   install_url = "https://addons.mozilla.org/firefox/downloads/latest/firefox-color/latest.xpi";
-        #   installation_mode = "force_installed";
-        #   private_browsing = true;
-        # };
+        # Catppuccin (and Stylix?) will only add extension data
+        # They will not install the extension itself
+        "FirefoxColor@mozilla.com" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/firefox-color/latest.xpi";
+          installation_mode = "force_installed";
+          private_browsing = true;
+        };
       };
     };
   };
