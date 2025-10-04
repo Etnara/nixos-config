@@ -26,5 +26,14 @@ map("n"    ,"<leader>ff"   ,telescope.find_files         ,{ desc = "Telescope fi
 map("n"    ,"<leader>fw"   ,telescope.live_grep          ,{ desc = "Telescope live grep"              })
 map("n"    ,"<leader>fb"   ,telescope.buffers            ,{ desc = "Telescope buffers"                })
 
+-- gitsigns
+local gitsigns = require("gitsigns")
+map("n"    ,"<leader>hs"   ,gitsigns.stage_hunk          ,{ desc = "Stage hunk"                       })
+map("n"    ,"<leader>hus"  ,gitsigns.undo_stage_hunk     ,{ desc = "Unstage hunk"                     })
+map("n"    ,"<leader>hr"   ,gitsigns.reset_hunk          ,{ desc = "Reset hunk"                       })
+map("n"    ,"<leader>hp"   ,gitsigns.preview_hunk        ,{ desc = "Preview hunk"                     })
+map("n"    ,"<leader>hi"   ,gitsigns.preview_hunk_inline ,{ desc = "Preview hunk inline"              })
+
+-- miscellaneous
 map("n"    ,"<leader>w"    ,"<cmd>set wrap!<cr>"         ,{ desc = "Toggle line wrapping"             })
 
