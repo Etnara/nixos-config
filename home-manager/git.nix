@@ -8,16 +8,9 @@
     userEmail = userSettings.email;
     extraConfig = {
       init.defaultBranch = "master";
-      core = {
-        editor = "nvim";
-      };
-      # TODO: Not sure why these don't work
-      diff = {
-          tool = "nvim -d";
-      };
-      merge = {
-          tool = "nvim -d";
-      };
+      core.editor = "nvim";
+      diff.tool = "vimdiff";
+      merge.tool = "vimdiff";
     };
   };
 

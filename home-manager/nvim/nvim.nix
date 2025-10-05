@@ -4,7 +4,8 @@
 
   programs.neovim = {
     enable = true;
-  	vimdiffAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
     extraPackages = with pkgs; [
       nixd
       lua-language-server
