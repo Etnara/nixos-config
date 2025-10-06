@@ -9,9 +9,11 @@
   ];
 
   home.packages = with pkgs; [
+    kdePackages.kio # Required for some Qt application file pickers like OBS (Fixes Error: Unable to create KIO worker)
     catppuccin-qt5ct
+    kdePackages.breeze # Only includes qt6
     kdePackages.breeze.qt5
-    kdePackages.breeze # qt6 i think. Double check
+    nwg-look
   ];
 
   # Stylix works but it is stuck on kvantum instead of breeze
@@ -22,8 +24,8 @@
     platformTheme.name = "qtct";
     # style.package = pkgs.catppuccin-qt5ct; # Don't override QT_STYLE_OVERRIDE
   };
-  # home.file.".config/qt5ct/qt5ct.conf".source = ./configs/qt5ct.conf;
-  # home.file.".config/qt6ct/qt6ct.conf".source = ./configs/qt6ct.conf;
+  home.file.".config/qt5ct/qt5ct.conf".source = ./configs/qt5ct.conf;
+  home.file.".config/qt6ct/qt6ct.conf".source = ./configs/qt6ct.conf;
 
   gtk = {
     enable = true;

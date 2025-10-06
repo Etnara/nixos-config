@@ -16,11 +16,8 @@
   ];
 
   home.packages = with pkgs; [
-    # System Stuff
-    nwg-look # Manual Theming
     wl-clipboard
     wl-clip-persist
-    kdePackages.kio # Required for some Qt application file pickers like OBS (Fixes Error: Unable to create KIO worker)
     nautilus
     discord
     brave
