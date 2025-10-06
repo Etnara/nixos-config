@@ -25,16 +25,28 @@ in
       defaultApplications = {
         "text/plain" = "nvim.desktop";
         "application/json" = "nvim.desktop";
+
+        "x-scheme-handler/https" = "librewolf.desktop";
+        "x-scheme-handler/http" = "librewolf.desktop";
         "application/pdf" = "librewolf.desktop";
-        # "audio/mpeg"
-        "video/mp4" = "mpv.desktop";
+
         "video/x-matroska" = "mpv.desktop";
+        "video/mp4" = "mpv.desktop";
+        "video/webm" = "mpv.desktop";
+        "image/gif" = "mpv.desktop";
+        "audio/mpeg" = "mpv.desktop";
+
         "image/png" = "feh.desktop";
         "image/jpeg" = "feh.desktop";
         "image/webp" = "feh.desktop";
+        "image/bmp" = "feh.desktop";
+        "image/tiff" = "feh.desktop";
       };
     };
   };
+
+  home.sessionVariables.EDITOR = "nvim";
+  home.sessionVariables.BROWSER = "librewolf";
 
   systemd.user.tmpfiles.rules = [
     # Type Path Mode User Group Age Arguments
