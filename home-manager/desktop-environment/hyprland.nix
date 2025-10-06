@@ -108,95 +108,9 @@
       windowrule = [
         "float, class:org.keepassxc.KeePassXC, title:Unlock Database - KeePassXC"
       ];
-
     };
 
   };
-
-  gtk = {
-    enable = true;
-    gtk2.enable = true;
-    colorScheme = "dark";
-    font = lib.mkForce {
-      name = "Noto Sans CJK JP Regular";
-      size = 11;
-    };
-
-    # Compare this to stylix because this theme
-    # doesn't work well with the calculator
-    # theme = {
-    #   package = pkgs.catppuccin-gtk.override {
-    #     variant = "mocha";
-    #     accents = [ "mauve" ];
-    #   };
-    #   name = "catppuccin-mocha-mauve-standard";
-    # };
-    iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.catppuccin-papirus-folders.override {
-        flavor = "mocha";
-        accent = "mauve";
-      };
-    };
-  };
-
-
-  qt = {
-    enable = true;
-    platformTheme.name = "qtct"; # Manual
-    
-    # Included at the bottom of this file instead of here
-    # Because it sets style.name to Catppuccin-Mocha instead of Breeze
-    # style.package = pkgs.catppuccin-qt5ct;
-
-    # platformTheme.name == QT_QPA_PLATFORMTHEME
-    #         style.name == QT_STYLE_OVERRIDE
-    # I like the breeze style (round and modern)
-    # qtct works perfectly for qt5 apps but dies on kde and I can't unset QT_STYLE_OVERRIDE
-    # Stylix works but it is stuck on kvantum instead of breeze
-    # This is a fools errand
-    # I've spent 3 days trying to figure this out and I give up
-    # I'm just not gonna use dolphin
-  };
-
-  home.pointerCursor = {
-    hyprcursor.enable = true;
-    gtk.enable = true;
-    x11.enable = true;
-    size = 20;
-    # package = pkgs.catppuccin-cursors.mochaDark;
-    # name = "catppuccin-mocha-dark-cursors";
-  };
-
-  services.dunst = {
-    enable = true;
-    settings = {
-      global = {
-        corner_radius = 20;
-      };
-    };
-  };
-
-  services.hyprpaper = {
-    enable = true;
-    settings = {
-      preload = [ "${./wallpaper.jpg}" ];
-      # Bro what is this array indexing syntax lol
-      wallpaper = [ "${lib.elemAt systemSettings.monitors 0},${./wallpaper.jpg}" ];
-    };
-  };
-
-  services.hyprpolkitagent.enable = true;
-
-  home.packages = with pkgs; [
-    grim # Screenshot
-    slurp # Screen Selection
-    grimblast # grim + slurp tool
-    wlogout # Configure this later
-    catppuccin-qt5ct
-    kdePackages.breeze.qt5
-    kdePackages.breeze # qt6 i think. Double check
-  ];
 
 }
 

@@ -15,7 +15,7 @@
 
       background = [ {
         # path = "screenshot";
-        path = "${./hyprland/wallpaper.jpg}";
+        path = "${../theme/configs/wallpaper.jpg}";
         blur_passes = 2;
         blur_size = 8;
       } ];
@@ -100,3 +100,4 @@
   };
 
 }
+

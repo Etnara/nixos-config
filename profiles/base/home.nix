@@ -10,29 +10,9 @@
   news.display = "silent";
 
   imports = [
-    ../../home-manager/fonts
-    ../../home-manager/obs
-    ../../home-manager/wm/${userSettings.wm}/${userSettings.wm}.nix
-    ../../home-manager/wm/waybar/waybar.nix
-    ../../home-manager/wm/hyprlock.nix
-    ../../home-manager/zsh.nix
-    ../../home-manager/virtualisation.nix
-    ../../home-manager/themes/stylix.nix
-    ../../home-manager/themes/catppuccin.nix
-    ../../home-manager/rofi/rofi.nix
-    ../../home-manager/btop.nix
-    ../../home-manager/fastfetch.nix
-    ../../home-manager/tmux.nix
-    ../../home-manager/keepassxc.nix
-    ../../home-manager/nvim/nvim.nix
-    ../../home-manager/terminal/${userSettings.term}.nix
-    ../../home-manager/feh.nix
-    ../../home-manager/browser/${userSettings.browser}.nix
-    ../../home-manager/git.nix
-    ../../home-manager/anki.nix
-    ../../home-manager/fcitx5.nix
-    ../../home-manager/xdg.nix
-    ../../home-manager/mpv.nix
+    ../../home-manager/applications
+    ../../home-manager/desktop-environment
+    ../../home-manager/theme
   ];
 
   home.packages = with pkgs; [
