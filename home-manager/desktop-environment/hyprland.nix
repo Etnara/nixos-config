@@ -20,6 +20,7 @@
         "dunst"
         "keepassxc"
         "obs --startreplaybuffer --minimize-to-tray --disable-shutdown-check"
+        "wl-clip-persist --clipboard regular"
       ];
 
       input = {

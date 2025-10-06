@@ -15,6 +15,7 @@
     ./xdg.nix
     ./screenshot.nix
     ./fcitx5.nix
+    ./clipboard.nix
   ];
 
 }
