@@ -1,17 +1,6 @@
 { pkgs, systemSettings, userSettings, secrets, ... }:
 
 {
-  imports = [
-    ../../nixos/hardware
-    ../../nixos/boot.nix
-    ../../nixos/fonts.nix
-    ../../nixos/hyprland.nix
-    ../../nixos/gaming
-    ../../nixos/virtualisation.nix
-    ../../nixos/zsh.nix
-    ../../nixos/timezone-locale.nix
-    ../../nixos/users.nix
-  ];
 
   system.stateVersion = "24.11";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -22,13 +11,19 @@
     dates = "weekly";
   };
 
+  imports = [
+    ../../nixos/system
+    ../../nixos/gaming
+    ../../nixos/virtualisation.nix
+  ];
+
   environment.systemPackages = with pkgs; [
     home-manager
+    git
     wget
     unzip
-    git
-    nvd # Nix diff for number of package updates widget
     sshfs
+    nvd # Nix diff for number of package updates widget
 
     # Networking
     net-tools # ifconfig
@@ -39,9 +34,6 @@
     # Forensics
     file
     gdb
-
-    # Debugging
-    # vulkan-tools
   ];
 
 }
