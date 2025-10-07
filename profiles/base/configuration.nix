@@ -6,7 +6,7 @@
     ../../nixos/boot.nix
     ../../nixos/fonts.nix
     ../../nixos/hyprland.nix
-    ../../nixos/steam.nix
+    ../../nixos/gaming
     ../../nixos/virtualisation.nix
     ../../nixos/zsh.nix
     ../../nixos/timezone-locale.nix

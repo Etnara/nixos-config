@@ -28,7 +28,6 @@
     zathura
     qbittorrent
     hyprpicker
-    lutris
   ];
 
 }
