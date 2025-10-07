@@ -8,23 +8,15 @@ in
   services.qemuGuest.enable = isGuest;
   services.spice-vdagentd.enable = isGuest;
 
-  # Copied from https://nixos.wiki/wiki/Virt-manager (25 August 2025) (Doesn't work)
+  # MANUAL: sudo virsh net-autostart default
   programs.virt-manager.enable = true;
-  environment.systemPackages = with pkgs; [
-    virtiofsd # For sharing filesystem
-    # Add the following into virt-manager filesystem xml
-    # <binary path="/run/current-system/sw/bin/virtiofsd"/>
-  ];
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu.vhostUserPackages = [ pkgs.virtiofsd ]; # Shared folders
+  };
   users.groups.libvirtd.members = [ userSettings.username ];
-  virtualisation.libvirtd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
-
-  # dconf.settings = {
-  #   "org/virt-manager/virt-manager/connections" = {
-  #     autoconnect = ["qemu:///system"];
-  #     uris = ["qemu:///system"];
-  #   };
-  # };
+  programs.dconf.enable = true; # Configured but not enabled by virt-manager
 
 }
 
