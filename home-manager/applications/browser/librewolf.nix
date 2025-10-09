@@ -32,6 +32,8 @@
         "browser.toolbars.bookmarks.visibility" = "never";
         # userChrome.css customisation
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+        # Stop alt key from spawning menu bar
+        "ui.key.menuAccessKeyFocuses" = false;
         # Play DRM-controlled content
         "media.eme.enabled" = true;
         # Container Tabs
