@@ -2,15 +2,24 @@
 
 {
 
-  home.packages = [ pkgs.obs-studio ];
+  programs.obs-studio.enable = true;
+  programs.obs-studio.plugins = with pkgs.obs-studio-plugins; [
+    obs-pipewire-audio-capture
+  ];
 
-  # TODO: Figure out how to let obs edit these two files
-  # home.file.".config/obs-studio/basic/profiles/Nix/basic.ini".source = config.lib.file.mkOutOfStoreSymlink userSettings.dotfilesDir + "/home-manager/obs/basic.ini";
-  # home.file.".config/obs-studio/basic/scenes/Nix.json".source = config.lib.file.mkOutOfStoreSymlink userSettings.dotfilesDir + "/home-manager/obs/Nix.json";
-
-  # home.file."exists".text = lib.mkIf (builtins.pathExists "/home/ren/Desktop/test/new.txt") "it exists bro";
   home.file.".config/obs-studio/themes/".source = ./themes;
   home.file.".config/obs-studio/themes/".recursive = true;
+
+  # IMPURE
+  # Source config files only if they don't already exist
+  home.file.".config/obs-studio/basic/profiles/Nix/basic.ini".enable = ! builtins.pathExists "${config.home.homeDirectory}/.config/obs-studio/basic/profiles/Nix/basic.ini";
+  home.file.".config/obs-studio/basic/profiles/Nix/basic.ini".source = ./basic.ini;
+
+  home.file.".config/obs-studio/basic/scenes/Nix.json".enable = ! builtins.pathExists "${config.home.homeDirectory}/.config/obs-studio/basic/scenes/Nix.json";
+  home.file.".config/obs-studio/basic/scenes/Nix.json".source = ./Nix.json;
+
+  home.file.".config/obs-studio/user.ini".enable = ! builtins.pathExists "${config.home.homeDirectory}/.config/obs-studio/user.ini";
+  home.file.".config/obs-studio/user.ini".source = ./user.ini;
 
 }
 

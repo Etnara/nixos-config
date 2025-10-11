@@ -13,7 +13,7 @@
       ne = "cd ~/.dotfiles; tmux new-session 'nvim' \\; new-window '$SHELL' \\; select-window -t 0";
       nu = "nix flake update --flake ~/.dotfiles";
       nr = "sudo nixos-rebuild switch --flake ~/.dotfiles#${systemSettings.hostname}";
-      nh = "home-manager switch --flake ~/.dotfiles#${userSettings.username} --show-trace";
+      nh = "home-manager switch --flake ~/.dotfiles#${userSettings.username} --impure --show-trace";
       nd = "nix develop ~/.dotfiles";
       l = "yy";
     };
