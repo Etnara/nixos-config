@@ -1,4 +1,4 @@
-{ ... }:
+{ systemSettings, ... }:
 
 {
 
@@ -30,10 +30,9 @@
           shadow_size = 3;
           shadow_color = "rgb(0,0,0)";
           shadow_boost = 1.2;
-          font_size = 150;
-          # font_family = "JetBrains Mono Nerd Font Mono ExtraBold";
-          font_family = "AlfaSlabOne ";
-          position = "0, -250";
+          font_size = if systemSettings.HiDPI then 150 else 115;
+          font_family = "AlfaSlabOne";
+          position = if systemSettings.HiDPI then "0, -250" else "0, -165";
           halign = "center";
           valign = "top";
         }
@@ -43,10 +42,9 @@
           text = "cmd[update:1000] echo -e \"$(date +\"%M\")\"";
           # color = 0xff$color0
           color = "rgb(205, 214, 244)";
-          font_size = 150;
-          # font_family = JetBrains Mono Nerd Font Mono ExtraBold
+          font_size = if systemSettings.HiDPI then 150 else 115;
           font_family = "AlfaSlabOne";
-          position = "0, -420";
+          position = if systemSettings.HiDPI then "0, -420" else "0, -300";
           halign = "center";
           valign = "top";
         }
@@ -55,9 +53,9 @@
           monitor = "";
           text = "cmd[update:1000] echo -e \"$(date +\"%-d %B %Y\")\"";
           color = "rgb(205, 214, 244)";
-          font_size = 14;
+          font_size = if systemSettings.HiDPI then 14 else 11;
           font_family = "JetBrains Mono Nerd Font Mono ExtraBold";
-          position = "0, 60";
+          position = if systemSettings.HiDPI then "0, 60" else "0, 50";
           halign = "center";
           valign = "center";
         }
@@ -66,9 +64,9 @@
           monitor = "";
           text = "cmd[update:1000] echo -e \"$(date +\"%A\")\"";
           color = "rgb(205, 214, 244)";
-          font_size = 14;
+          font_size = if systemSettings.HiDPI then 14 else 11;
           font_family = "JetBrains Mono Nerd Font Mono ExtraBold";
-          position = "0, 36";
+          position = if systemSettings.HiDPI then "0, 36" else "0, 26";
           halign = "center";
           valign = "center";
         }
@@ -76,13 +74,13 @@
 
       input-field = [ {
         monitor = "";
-        size = "300, 60";
+        size = if systemSettings.HiDPI then "300, 60" else "225, 45";
         halign = "center";
         valign = "center";
         position = "0, -50";
         fade_on_empty = false;
 
-        outline_thickness = 5;
+        outline_thickness = if systemSettings.HiDPI then 5 else 4;
         outer_color = "rgb(cba6f7)";
         inner_color = "rgb(313244)";
         font_color = "rgb(cdd6f4)";

@@ -18,7 +18,8 @@
       profile = "base";
       timezone = "America/New_York"; # "America/New_York" or "Europe/London" or "Europe/Brussels"
       locale = "en_GB.UTF-8";
-      monitors = [ "" ]; # hyprctl monitors list
+      monitors = [ "DP-1" ]; # hyprctl monitors list
+      HiDPI = false;
       cpuType = ""; # "intel" or "amd" or "qemu"
       gpuType = ""; # "nvidia" or "amd" or "qemu"
     };

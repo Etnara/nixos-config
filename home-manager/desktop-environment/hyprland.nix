@@ -7,7 +7,6 @@
     systemd.enable = false; # Needed for withUWSM. https://wiki.hyprland.org/Useful-Utilities/Systemd-start/
 
     settings = {
-      "monitor" = ",1920x1080@60,auto,1"; # VM Hack
       "$mod" = "SUPER";
       "$fileManager" = "nautilus";
       "$browser" = "${userSettings.browser}";
