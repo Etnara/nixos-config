@@ -7,9 +7,10 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     stylix.url = "github:danth/stylix";
     catppuccin.url = "github:catppuccin/nix";
+    niri.url = "github:sodiboo/niri-flake";
   };
 
-  outputs = { nixpkgs, home-manager, stylix, catppuccin, ... }:
+  outputs = { nixpkgs, home-manager, stylix, catppuccin, niri, ... }:
   let
     # ---- SYSTEM SETTINGS ---- #
     systemSettings = {
@@ -43,12 +44,15 @@
   in
   {
 
+    nixpkgs.overlays = [ niri.overlays.niri ];
+
     nixosConfigurations = {
       ${systemSettings.hostname} = lib.nixosSystem {
         system = systemSettings.architecture;
         modules = [
           ./profiles/${systemSettings.profile}/configuration.nix
           catppuccin.nixosModules.catppuccin
+          niri.nixosModules.niri
         ];
         specialArgs = {
           inherit systemSettings;
@@ -65,6 +69,7 @@
           ./profiles/base/home.nix
           stylix.homeModules.stylix
           catppuccin.homeModules.catppuccin
+          niri.homeModules.niri
         ];
         extraSpecialArgs = {
           inherit systemSettings;
