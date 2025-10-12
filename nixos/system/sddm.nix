@@ -24,5 +24,7 @@
     withUWSM = true;
   };
 
+  programs.niri.enable = true;
+
 }
 
