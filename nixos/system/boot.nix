@@ -1,27 +1,26 @@
-{ pkgs, ... }:
+{ catppuccin, pkgs, ... }:
 
 {
+
+  catppuccin.limine.enable = true;
 
   boot = {
 
     loader = {
-      systemd-boot.enable = true;
+      limine = {
+        enable = true;
+        maxGenerations = 5;
+      };
       efi.canTouchEfiVariables = true;
+      timeout = 3;
     };
 
-    plymouth = {
-      enable = true;
-      theme = "lone";
-      themePackages = with pkgs; [
-        (adi1090x-plymouth-themes.override {
-          selected_themes = [ "lone" ];
-        })
-      ];
-      extraConfig = ''
-        [Daemon]
-        DeviceScale=2
-      '';
-    };
+    initrd.verbose = false;
+    consoleLogLevel = 0;
+    kernelParams = [
+      "quiet"
+      "udev.log_level=3"
+    ];
 
   };
   
