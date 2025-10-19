@@ -34,6 +34,7 @@
       term = "kitty";
       browser = "librewolf";
       wm = "hyprland";
+      LAMPP.enable = false;
     };
 
     # ----- Secrets ----- #

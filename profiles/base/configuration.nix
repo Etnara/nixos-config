@@ -1,4 +1,4 @@
-{ pkgs, systemSettings, userSettings, secrets, ... }:
+{ lib, pkgs, systemSettings, userSettings, secrets, ... }:
 
 {
 
@@ -15,7 +15,9 @@
     ../../nixos/system
     ../../nixos/gaming
     ../../nixos/virtualisation.nix
-  ];
+  ]
+  ++ lib.optional userSettings.LAMPP.enable ../../nixos/lampp.nix
+  ;
 
   environment.systemPackages = with pkgs; [
     home-manager
