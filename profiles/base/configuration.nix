@@ -23,7 +23,7 @@
     home-manager
     git
     wget
-    unzip
+    unar
     sshfs
     nvd # Nix diff for number of package updates widget
 
