@@ -10,6 +10,7 @@
     extraConfig = {
       init.defaultBranch = "master";
       pull.rebase = "true";
+      push.autoSetupRemote = "true";
       core.editor = "nvim";
       diff.tool = "vimdiff";
       merge.tool = "vimdiff";
