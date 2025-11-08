@@ -18,5 +18,11 @@ in
   virtualisation.spiceUSBRedirection.enable = true;
   programs.dconf.enable = true; # Configured but not enabled by virt-manager
 
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+  };
+
+  environment.systemPackages = [ pkgs.distrobox ];
 }
 
