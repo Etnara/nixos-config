@@ -14,7 +14,7 @@
       nu = "nix flake update --flake ~/.dotfiles";
       nr = "sudo nixos-rebuild switch --flake ~/.dotfiles#${systemSettings.hostname}";
       nh = "home-manager switch --flake ~/.dotfiles#${userSettings.username} --impure --show-trace";
-      nd = "nix develop ~/.dotfiles";
+      nd = "nix develop ~/.dotfiles -c $SHELL";
       l = "yy";
     };
   };
