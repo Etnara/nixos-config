@@ -7,16 +7,24 @@
     vimAlias = true;
     vimdiffAlias = true;
     extraPackages = with pkgs; [
+      ripgrep
       nixd
       lua-language-server
+
       nodePackages.vscode-json-languageserver
       nodePackages.vscode-langservers-extracted
-      ripgrep
+
+      nodePackages.intelephense
+      clang
+      pyright
+      jdt-language-server
+      rust-analyzer
     ];
   };
 
   home.file.".config/nvim".source = ./.;
   home.file.".config/nvim".recursive = true;
+  imports = [ ./lua/plugins/lspconfig.nix ];
 
 }
 
