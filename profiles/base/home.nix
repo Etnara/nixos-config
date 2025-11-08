@@ -28,6 +28,7 @@
     zathura
     qbittorrent
     hyprpicker
+    wl-mirror
   ];
 
 }
