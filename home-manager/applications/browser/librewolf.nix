@@ -11,12 +11,20 @@
         name = userSettings.name;
         isDefault = true;
         extensions.force = true;
+        settings = {
+          "sidebar.visibility" = "expand-on-hover";
+          "sidebar.main.tools" = ""; # Doesn't work
+        };
       };
     };
 
     # Can't be set by policy
     settings = {
       "middlemouse.paste" = false;
+      # Side Bar
+      "sidebar.verticalTabs" = true;
+      "sidebar.position_start" = false;
+      "sidebar.verticalTabs.dragToPinPromo.dismissed" = true;
     };
 
     policies = {
@@ -29,7 +37,7 @@
         "media.videocontrols.picture-in-picture.video-toggle.enabled" = false;
         "browser.translations.enable" = false;
         "general.autoScroll" = true;
-        "browser.toolbars.bookmarks.visibility" = "never";
+        "browser.toolbars.bookmarks.visibility" = "newtab";
         # userChrome.css customisation
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         # Stop alt key from spawning menu bar
@@ -47,6 +55,32 @@
         "browser.urlbar.suggest.openpage" = false;
         "browser.urlbar.suggest.topsites" = false;
         "browser.urlbar.suggest.engines" = false;
+        "browser.uiCustomization.state" = builtins.toJSON {
+          "placements" = {
+            "unified-extensions-area" = [
+              "ublock0_raymondhill_net-browser-action"                        # uBlock Origin
+              "_d7742d87-e61d-4b78-b8a1-b469842139fa_-browser-action"         # Vimium
+              "_036a55b4-5e72-4d05-a06c-cba2dfcc134a_-browser-action"         # Yomitan
+              "keepassxc-browser_keepassxc_org-browser-action"                # KeePassXC
+              "_cb31ec5d-c49a-4e5a-b240-16c767444f62_-browser-action"         # Translate
+              "enhancerforyoutube_maximerf_addons_mozilla_org-browser-action" # YT Enhancer
+              "_cb31ec5d-c49a-4e5a-b240-16c767444f62_-browser-action"         # Indie Wiki
+              "_7a7a4a92-a2a0-41d1-9fd7-1e92480d612d_-browser-action"         # Stylus
+              "firefoxcolor_mozilla_com-browser-action"                       # Firefox Colour
+              "_6b733b82-9261-47ee-a595-2dda294a4d08_-browser-action"         # Jisho Pitcher
+            ];
+            "nav-bar" = [
+              "back-button"
+              "forward-button"
+              "stop-reload-button"
+              "urlbar-container"
+              "downloads-button"
+              "unified-extensions-button"
+              "sidebar-button"
+            ];
+          };
+          "currentVersion" = 23; # Required to work
+        };
         # Borealis
         "browser.fixup.domainsuffixwhitelist.borealis" = true;
       };
@@ -98,8 +132,7 @@
           installation_mode = "force_installed";
           private_browsing = true;
         };
-        # Catppuccin (and Stylix?) will only add extension data
-        # They will not install the extension itself
+        # Catppuccin and Stylix Module
         "FirefoxColor@mozilla.com" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/firefox-color/latest.xpi";
           installation_mode = "force_installed";
