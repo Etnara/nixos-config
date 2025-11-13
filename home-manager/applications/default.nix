@@ -10,6 +10,7 @@
     ./feh.nix
     ./obs
     ./anki.nix
+    ./emacs.nix
   ];
 
 }
