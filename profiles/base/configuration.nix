@@ -32,6 +32,7 @@
     dnsutils # nslookup
     whois
     traceroute
+    nmap
 
     # Forensics
     file
