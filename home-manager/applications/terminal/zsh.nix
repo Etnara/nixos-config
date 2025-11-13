@@ -16,6 +16,22 @@
       nh = "home-manager switch --flake ~/.dotfiles#${userSettings.username} --impure --show-trace";
       nd = "nix develop ~/.dotfiles -c $SHELL";
       l = "yy";
+      gs = "git status";
+      gl = "git log";
+      glo = "git log --oneline";
+      gd = "git diff";
+      gdc = "git diff --cached";
+      ga = "git add";
+      gr = "git restore";
+      grs = "git restore --staged";
+      gc = "git commit";
+      gspu = "git stash push";
+      gspo = "git stash pop";
+      gf = "git fetch";
+      gpul = "git pull";
+      gpus = "git push";
+      gco = "git checkout";
+      gmt = "git mergetool";
     };
   };
 
