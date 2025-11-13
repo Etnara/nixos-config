@@ -13,9 +13,9 @@
   "margin-right": 0,
   "spacing": 0,
   "modules-left": [
-    "hyprland/workspaces",
+    "niri/workspaces",
     "custom/arrow-dec",
-    "hyprland/window",
+    "niri/window",
   ],
   "modules-center": [
     "tray"
@@ -31,6 +31,7 @@
     "custom/dot-alt",
     "clock",
   ],
+// HYPRLAND
   "hyprland/workspaces": {
     "all-outputs": false,
     "active-only": "false",
@@ -81,9 +82,43 @@
       "libreoffice-calc": "LibreOffice Calc",
       "steam": "Steam",
       "org.kde.kdenlive": "Kdenlive",
-
     },
   },
+// NIRI
+  "niri/workspaces": {
+    "all-outputs": false,
+    "disable-click": false,
+    "format": "<big>{icon}</big>",
+    "format-icons": {
+      "1": "一",
+      "2": "二",
+      "3": "三",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "十",
+      "urgent": "急",
+      "default": "常"
+    }
+  },
+  "niri/window": {
+    "format": "{app_id}",
+    "rewrite": {
+      "kitty": "Kitty",
+      "librewolf": "LibreWolf",
+      "org.gnome.Nautilus": "Nautilus",
+      "discord": "Discord",
+      "libreoffice-writer": "LibreOffice Writer",
+      "libreoffice-impress": "LibreOffice Impress",
+      "libreoffice-calc": "LibreOffice Calc",
+      "steam": "Steam",
+      "org.kde.kdenlive": "Kdenlive",
+    },
+  },
+// END
   "tray": {
     "icon-size": 20,
     "spacing": 8
