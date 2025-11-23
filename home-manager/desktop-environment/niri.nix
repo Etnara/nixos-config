@@ -32,6 +32,15 @@
           matches = [ { title = "^Unlock Database - KeePassXC$"; } ];
           open-floating = true;
         }
+        {
+          matches = [ { app-id = "steam"; title = "^notificationtoasts_\\d+_desktop$"; } ];
+          default-floating-position = {
+            relative-to = "bottom-right";
+            x = 0;
+            y = 0;
+          };
+          open-focused = false;
+        }
       ];
 
       spawn-at-startup = [
