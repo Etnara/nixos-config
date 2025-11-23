@@ -6,6 +6,8 @@ pkgs.mkShell {
     gcc
     cargo
     temurin-bin # Java
+    php
+    phpPackages.composer
     (python3.withPackages (pp: with pp; [
       numpy
       torch
