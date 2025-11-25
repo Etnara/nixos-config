@@ -14,15 +14,9 @@ in
     enable = true;
     qemu.vhostUserPackages = [ pkgs.virtiofsd ]; # Shared folders
   };
-  users.groups.libvirtd.members = [ userSettings.username ];
+  users.users.${userSettings.username}.extraGroups = [ "libvirtd" ];
   virtualisation.spiceUSBRedirection.enable = true;
   programs.dconf.enable = true; # Configured but not enabled by virt-manager
 
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-  };
-
-  environment.systemPackages = [ pkgs.distrobox ];
 }
 
