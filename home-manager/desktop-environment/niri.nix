@@ -111,6 +111,7 @@
         "Mod+Ctrl+F".action = expand-column-to-available-width;
         "Mod+C".action = center-column;
         "Mod+Ctrl+C".action = center-visible-columns;
+        "Mod+N".action = set-column-width "50%";
 
         "Mod+Equal".action = set-column-width "+10%";
         "Mod+Minus".action = set-column-width "-10%";
