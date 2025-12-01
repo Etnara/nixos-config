@@ -33,6 +33,10 @@
           open-floating = true;
         }
         {
+          matches = [ { title = "^Picture-in-Picture$"; } ];
+          open-floating = true;
+        }
+        {
           matches = [ { app-id = "steam"; title = "^notificationtoasts_\\d+_desktop$"; } ];
           default-floating-position = {
             relative-to = "bottom-right";
