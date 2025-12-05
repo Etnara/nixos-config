@@ -41,7 +41,10 @@
     secrets = import ./secrets.nix;
 
     lib = nixpkgs.lib;
-    pkgs = nixpkgs.legacyPackages.${systemSettings.architecture};
+    pkgs = import nixpkgs {
+      system = systemSettings.architecture;
+      config.allowUnfree = true;
+    };
   in
   {
 

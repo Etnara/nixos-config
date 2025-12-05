@@ -10,9 +10,10 @@ pkgs.mkShell {
     phpPackages.composer
     (python3.withPackages (pp: with pp; [
       numpy
-      torch
+      torch-bin # Binary is required for CUDA support
       pandas
       polars
+      transformers
       spacy # Can't download 
       # gensim
       scikit-learn
