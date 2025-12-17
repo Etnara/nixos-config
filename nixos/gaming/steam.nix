@@ -13,6 +13,8 @@
     ];
   };
 
+  networking.firewall.allowedTCPPorts = [ 7777 ]; # Terraria Multiplayer
+
   programs.gamemode.enable = true;
 
 }
