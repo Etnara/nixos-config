@@ -26,6 +26,7 @@
     unar
     sshfs
     nvd # Nix diff for number of package updates widget
+    caligula # Burning ISOs
 
     # Networking
     net-tools # ifconfig
