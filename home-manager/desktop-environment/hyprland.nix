@@ -38,6 +38,7 @@
         "$mod, w, exec, $browser"
         "$mod, v, togglefloating"
         "$mod, space, exec, $menu"
+        "$mod, c, exec, rofi -show calc"
         "$mod, m, exec, hyprlock"
         "$mod, f, fullscreen"
         "$mod SHIFT, f, fullscreen, 1"

@@ -59,6 +59,7 @@
 
       binds = with config.lib.niri.actions; {
         "Mod+Space".action.spawn = [ "rofi" "-show" "drun" ];
+        "Mod+C".action.spawn = [ "rofi" "-show" "calc" ];
         "Mod+Return".action.spawn = "kitty";
         "Mod+E".action.spawn = "nautilus";
         "Mod+W".action.spawn = "librewolf";
@@ -113,7 +114,6 @@
         "Mod+F".action = maximize-column;
         "Mod+Shift+F".action = fullscreen-window;
         "Mod+Ctrl+F".action = expand-column-to-available-width;
-        "Mod+C".action = center-column;
         "Mod+Ctrl+C".action = center-visible-columns;
         "Mod+N".action = set-column-width "50%";
 
