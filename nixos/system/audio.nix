@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
 
@@ -11,6 +11,8 @@
     pulse.enable = true;
     jack.enable = true;
   };
+
+  environment.systemPackages = [ pkgs.wiremix ];
 
 }
 

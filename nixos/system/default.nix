@@ -8,7 +8,7 @@
     ./timezone-locale.nix
     ./networking.nix
     ./bluetooth.nix
-    ./pipewire.nix
+    ./audio.nix
     ./printing.nix
 
     ./boot.nix
