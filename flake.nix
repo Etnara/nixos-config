@@ -43,7 +43,11 @@
     lib = nixpkgs.lib;
     pkgs = import nixpkgs {
       system = systemSettings.architecture;
-      config.allowUnfree = true;
+      config = {
+        allowUnfree = true;
+        cudaSupport = systemSettings.gpuType == "nvidia";
+        rocmSupport = systemSettings.gpuType == "amd";
+      };
     };
   in
   {

@@ -10,7 +10,7 @@ pkgs.mkShell {
     phpPackages.composer
     (python3.withPackages (pp: with pp; [
       numpy
-      torch # use `torch-bin` for CUDA support, compilation takes a long time
+      torch
       pandas
       polars
       transformers

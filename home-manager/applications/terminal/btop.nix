@@ -4,10 +4,6 @@
   
   programs.btop= {
     enable = true;
-    package = pkgs.btop.override {
-      cudaSupport = systemSettings.gpuType == "nvidia";
-      rocmSupport = systemSettings.gpuType == "amd";
-    };
     settings = {
       # color_theme = "catppuccin_mocha";
       vim_keys = true;

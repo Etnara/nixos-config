@@ -3,12 +3,22 @@
 {
 
   system.stateVersion = "24.11";
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nixpkgs.config.allowUnfree = true;
-  nix.gc = {
-    automatic = true;
-    options = "--delete-older-than +10";
-    dates = "weekly";
+  nixpkgs.config = {
+    allowUnfree = true;
+    cudaSupport = systemSettings.gpuType == "nvidia";
+    rocmSupport = systemSettings.gpuType == "amd";
+  };
+  nix = {
+    settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+      substituters = [ "https://cache.nixos-cuda.org" ];
+      trusted-public-keys = [ "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M=" ];
+    };
+    gc = {
+      automatic = true;
+      options = "--delete-older-than +10";
+      dates = "weekly";
+    };
   };
 
   imports = [

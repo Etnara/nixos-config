@@ -24,5 +24,7 @@ in
     nvidiaSettings = nvidia;
   };
 
+  hardware.graphics.enable = true;
+
 }
 

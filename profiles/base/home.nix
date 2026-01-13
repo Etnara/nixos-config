@@ -1,12 +1,18 @@
-{ pkgs, userSettings, ... }:
+{ pkgs, userSettings, systemSettings, ... }:
 
 {
 
-  home.stateVersion = "24.11";
-  home.username = userSettings.username;
-  home.homeDirectory = "/home/" + userSettings.username;
   programs.home-manager.enable = true;
-  nixpkgs.config.allowUnfree = true;
+  home = {
+    stateVersion = "24.11";
+    username = userSettings.username;
+    homeDirectory = "/home/" + userSettings.username;
+  };
+  nixpkgs.config = {
+    allowUnfree = true;
+    cudaSupport = systemSettings.gpuType == "nvidia";
+    rocmSupport = systemSettings.gpuType == "amd";
+  };
   news.display = "silent";
 
   imports = [
