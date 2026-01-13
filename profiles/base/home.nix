@@ -35,6 +35,7 @@
     qbittorrent
     hyprpicker
     wl-mirror
+    ani-cli
   ];
 
 }
