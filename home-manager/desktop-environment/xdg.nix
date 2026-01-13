@@ -10,13 +10,13 @@ in
     userDirs = {
       enable = true;
       createDirectories = true;
-      desktop = "${homeDirectory}/Desktop";
-      documents = "${homeDirectory}/Documents";
-      download = "${homeDirectory}/Downloads";
-      pictures =  "${homeDirectory}/Pictures";
-      videos =  "${homeDirectory}/Videos";
-      music = null;
-      templates = null;
+      desktop     = "${homeDirectory}/Desktop";
+      documents   = "${homeDirectory}/Documents";
+      download    = "${homeDirectory}/Downloads";
+      pictures    = "${homeDirectory}/Pictures";
+      videos      = "${homeDirectory}/Videos";
+      music       = "${homeDirectory}/Music";
+      templates   = null;
       publicShare = null;
     };
     mime.enable = true;

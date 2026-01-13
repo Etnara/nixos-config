@@ -11,6 +11,7 @@
     ./obs
     ./anki.nix
     ./emacs.nix
+    ./music.nix
   ];
 
 }
