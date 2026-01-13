@@ -25,6 +25,7 @@ pkgs.mkShell {
       pymongo
       neo4j
     ]))
+    nodejs # For LaTeX tree-sitter
   ];
 
 }

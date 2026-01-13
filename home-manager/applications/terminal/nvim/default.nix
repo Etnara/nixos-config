@@ -7,6 +7,7 @@
     vimAlias = true;
     vimdiffAlias = true;
     extraPackages = with pkgs; [
+      tree-sitter # For LaTeX tree-sitter
       ripgrep
       nixd
       lua-language-server
@@ -19,6 +20,8 @@
       pyright
       jdt-language-server
       rust-analyzer
+      python3Packages.pylatexenc # Inline LaTeX
+      # libtexprintf # Multiline LaTeX (No Package, try Distrobox)
     ];
   };
 

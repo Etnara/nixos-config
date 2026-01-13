@@ -8,7 +8,7 @@ return {
         ensure_installed = {
           "nix", "lua", "css", "csv", "c", "cpp", "git_rebase",
           "gitcommit", "gitignore", "html", "ini", "java", "javadoc",
-          "jinja", "make", "markdown", "perl", "php", "python",
+          "jinja", "latex", "make", "markdown", "perl", "php", "python",
           "regex", "rust", "sql", "ssh_config", "toml", "yaml"
         },
         sync_install = false,
