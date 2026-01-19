@@ -14,7 +14,7 @@
   };
 
   networking.firewall.allowedTCPPorts = [ 7777 ]; # Terraria Multiplayer
-
+  networking.firewall.allowedUDPPorts = [ 34197 ]; # Factorio Multiplayer
   programs.gamemode.enable = true;
 
 }
