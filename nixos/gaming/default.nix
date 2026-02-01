@@ -4,6 +4,7 @@
 
   imports = [
     ./steam.nix
+    ./alvr.nix
   ];
 
   environment.systemPackages = with pkgs; [
