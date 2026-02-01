@@ -203,6 +203,18 @@
     enable = true;
     enableZshIntegration = true;
   };
+  programs.yazi.keymap = {
+    mgr.prepend_keymap = [
+      { on = [ "g" "/" ]; run = "cd /"; desc = "Go /"; }
+      { on = [ "g" "l" ]; run = "cd ~/.local/share"; desc = "Go ~/.local/share"; }
+      { on = [ "g" "c" ]; run = "cd ~/.dotfiles"; desc = "Go ~/.dotfiles"; }
+      { on = [ "g" "C" ]; run = "cd ~/.config"; desc = "Go ~/.config"; }
+      { on = [ "g" "a" ]; run = "cd ~/Aurora"; desc = "Go Aurora"; }
+      { on = [ "g" "p" ]; run = "cd ~/Aurora/Backups/Pictures || cd ~/Pictures"; desc = "Go Pictures"; }
+      { on = [ "g" "v" ]; run = "cd ~/Aurora/Backups/Videos || cd ~/Videos"; desc = "Go Videos"; }
+      { on = [ "g" "g" ]; run = "cd ~/Documents/Games"; desc = "Go Games"; }
+    ];
+  };
 
 }
 
