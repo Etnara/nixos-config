@@ -12,6 +12,9 @@
     mangohud
     osu-lazer-bin
     prismlauncher
+    (retroarch.withCores (cores: with cores; [
+      fbneo
+    ]))
   ];
 
 }
