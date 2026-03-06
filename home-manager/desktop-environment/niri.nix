@@ -125,9 +125,9 @@
         "Mod+V".action = toggle-window-floating;
         "Mod+Shift+V".action = switch-focus-between-floating-and-tiling;
         "Mod+A".action = toggle-column-tabbed-display;
-        "Mod+S".action = screenshot;
-        # "Mod+Ctrl+S".action = screenshot-screen;
-        # "Mod+Alt+S".action = screenshot-window;
+        "Mod+S".action.screenshot = [ ];
+        "Mod+Ctrl+S".action.screenshot-screen = [ ];
+        "Mod+Shift+S".action.screenshot-window = [ ];
 
       };
 

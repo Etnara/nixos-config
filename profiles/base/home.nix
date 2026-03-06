@@ -10,9 +10,11 @@
   };
   nixpkgs.config = {
     allowUnfree = true;
+    # allowAliases = false; # Debugging
     cudaSupport = systemSettings.gpuType == "nvidia";
     rocmSupport = systemSettings.gpuType == "amd";
   };
+  nix.package = pkgs.nix;
   news.display = "silent";
 
   imports = [

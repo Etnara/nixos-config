@@ -20,6 +20,7 @@
       dates = "weekly";
     };
   };
+  catppuccin.cache.enable = true;
 
   imports = [
     ../../nixos/system

@@ -12,10 +12,10 @@
       nixd
       lua-language-server
 
-      nodePackages.vscode-json-languageserver
-      nodePackages.vscode-langservers-extracted
+      vscode-json-languageserver
+      vscode-langservers-extracted
 
-      nodePackages.intelephense
+      intelephense
       clang
       pyright
       jdt-language-server

@@ -9,7 +9,7 @@
       waylandFrontend = true;
       addons = with pkgs; [
         fcitx5-anthy # Japanese
-        fcitx5-chinese-addons
+        qt6Packages.fcitx5-chinese-addons
       ];
       settings = {
         addons = {

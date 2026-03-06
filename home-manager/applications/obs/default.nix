@@ -6,7 +6,7 @@ let
     repo = "nixpkgs";
     rev = "e473c61292725842b565ca037aa5c0ddf808994e";
     sha256 = "sha256-kqV6U5a4zv4+S05tkl/hQQ1FYLDJtqOjUMB4u3Tr8l8=";
-  }) { inherit (pkgs) system; };
+  }) { inherit (pkgs.stdenv.hostPlatform) system; };
 in
 {
 

@@ -5,10 +5,9 @@
   programs.git = {
     enable = true;
     lfs.enable = true;
-    delta.enable = true;
-    userName = userSettings.username;
-    userEmail = userSettings.email;
-    extraConfig = {
+    settings = {
+      user.name = userSettings.username;
+      user.email = userSettings.email;
       init.defaultBranch = "master";
       pull.rebase = "true";
       push.autoSetupRemote = "true";
@@ -16,6 +15,11 @@
       diff.tool = "vimdiff";
       merge.tool = "vimdiff";
     };
+  };
+
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
   };
 
   programs.bat.enable = true;
