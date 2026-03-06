@@ -26,6 +26,7 @@
     ../../nixos/system
     ../../nixos/gaming
     ../../nixos/virtualisation
+    ../../nixos/wireshark.nix
   ]
   ++ lib.optional userSettings.LAMPP.enable ../../nixos/lampp.nix
   ;
