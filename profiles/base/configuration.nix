@@ -1,4 +1,4 @@
-{ lib, pkgs, systemSettings, userSettings, secrets, ... }:
+{ lib, pkgs, systemSettings, userSettings, ... }:
 
 {
 

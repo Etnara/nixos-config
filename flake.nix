@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     stylix.url = "github:danth/stylix/release-25.11";
@@ -10,7 +11,7 @@
     niri.url = "github:sodiboo/niri-flake";
   };
 
-  outputs = { nixpkgs, home-manager, stylix, catppuccin, niri, ... }:
+  outputs = { nixpkgs, nixpkgs-unstable, home-manager, stylix, catppuccin, niri, ... }:
   let
     # ---- SYSTEM SETTINGS ---- #
     systemSettings = {
@@ -49,6 +50,14 @@
         rocmSupport = systemSettings.gpuType == "amd";
       };
     };
+    pkgs-unstable = import nixpkgs-unstable {
+      system = systemSettings.architecture;
+      config = {
+        allowUnfree = true;
+        cudaSupport = systemSettings.gpuType == "nvidia";
+        rocmSupport = systemSettings.gpuType == "amd";
+      };
+    };
   in
   {
 
@@ -66,6 +75,7 @@
           inherit systemSettings;
           inherit userSettings;
           inherit secrets;
+          inherit pkgs-unstable;
         };
       };
     };
@@ -83,6 +93,7 @@
           inherit systemSettings;
           inherit userSettings;
           inherit secrets;
+          inherit pkgs-unstable;
         };
       };
     };
