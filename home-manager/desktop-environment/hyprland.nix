@@ -1,4 +1,4 @@
-{ pkgs, lib, systemSettings, userSettings, ...}:
+{ ... }:
 
 {
 
@@ -8,9 +8,6 @@
 
     settings = {
       "$mod" = "SUPER";
-      "$fileManager" = "nautilus";
-      "$browser" = "${userSettings.browser}";
-      "$menu" = "rofi -show drun";
 
       # TODO: Use uwsm app
       exec-once = [
@@ -32,12 +29,12 @@
       };
 
       bind = [
-        "$mod, return, exec, ${userSettings.term}"
+        "$mod, return, exec, kitty"
         "$mod, q, killactive"
-        "$mod, e, exec, $fileManager"
-        "$mod, w, exec, $browser"
+        "$mod, e, exec, nautilus"
+        "$mod, w, exec, librewolf"
         "$mod, v, togglefloating"
-        "$mod, space, exec, $menu"
+        "$mod, space, exec, rofi -show drun"
         "$mod, c, exec, rofi -show calc"
         "$mod, m, exec, hyprlock"
         "$mod, f, fullscreen"

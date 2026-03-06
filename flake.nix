@@ -31,10 +31,6 @@
       username = "ren";
       name = "Ren";
       email = "zakbutt18@gmail.com";
-      editor = "nvim";
-      term = "kitty";
-      browser = "librewolf";
-      wm = "hyprland";
       LAMPP.enable = false;
     };
 
