@@ -32,7 +32,6 @@
     baobab
     gnome-calculator
     krita
-    # ciscoPacketTracer8 # Currently one of the dependencies has a CVE
     zathura
     qbittorrent
     hyprpicker

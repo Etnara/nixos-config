@@ -45,6 +45,10 @@
           };
           open-focused = false;
         }
+        {
+          matches = [ { app-id = "PacketTracer"; } ];
+          default-column-width = { proportion = 1. / 2.; };
+        }
       ];
 
       spawn-at-startup = [

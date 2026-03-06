@@ -26,7 +26,7 @@
     ../../nixos/system
     ../../nixos/gaming
     ../../nixos/virtualisation
-    ../../nixos/wireshark.nix
+    ../../nixos/security
   ]
   ++ lib.optional userSettings.LAMPP.enable ../../nixos/lampp.nix
   ;
@@ -39,17 +39,6 @@
     sshfs
     nvd # Nix diff for number of package updates widget
     caligula # Burning ISOs
-
-    # Networking
-    net-tools # ifconfig
-    dnsutils # nslookup
-    whois
-    traceroute
-    nmap
-
-    # Forensics
-    file
-    gdb
   ];
 
 }
