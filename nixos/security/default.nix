@@ -15,6 +15,10 @@
     traceroute
     nmap
 
+    # Benchmarking
+    flent
+    netperf
+
     # Forensics
     file
     gdb
