@@ -5,7 +5,7 @@
   imports = [
     ./cpu.nix
     ./graphics.nix
-    ./ssd.nix
+    ./storage.nix
     ./kernel.nix
     ./filesystem.nix
   ];
