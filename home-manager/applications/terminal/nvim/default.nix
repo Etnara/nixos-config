@@ -22,6 +22,7 @@
       rust-analyzer
       python3Packages.pylatexenc # Inline LaTeX
       # libtexprintf # Multiline LaTeX (No Package, try Distrobox)
+      kdePackages.qtdeclarative # qmlls
     ];
   };
 

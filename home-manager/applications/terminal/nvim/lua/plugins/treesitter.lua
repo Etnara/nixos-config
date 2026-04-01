@@ -9,7 +9,7 @@ return {
           "nix", "lua", "css", "csv", "c", "cpp", "git_rebase",
           "gitcommit", "gitignore", "html", "ini", "java", "javadoc",
           "jinja", "latex", "make", "markdown", "perl", "php", "python",
-          "regex", "rust", "sql", "ssh_config", "toml", "yaml"
+          "regex", "rust", "sql", "ssh_config", "toml", "yaml", "qmljs"
         },
         sync_install = false,
         highlight = { enable = true },
