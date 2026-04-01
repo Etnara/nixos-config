@@ -9,6 +9,11 @@
     stylix.url = "github:danth/stylix/release-25.11";
     catppuccin.url = "github:catppuccin/nix/release-25.11";
     niri.url = "github:sodiboo/niri-flake";
+    quickshell.url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+    quickshell.inputs.nixpkgs.follows = "nixpkgs";
+    qml-niri.url = "github:imiric/qml-niri/main";
+    qml-niri.inputs.nixpkgs.follows = "nixpkgs";
+    qml-niri.inputs.quickshell.follows = "quickshell";
   };
 
   outputs = { nixpkgs, nixpkgs-unstable, home-manager, stylix, catppuccin, niri, ... }:
@@ -90,6 +95,7 @@
           inherit userSettings;
           inherit secrets;
           inherit pkgs-unstable;
+          inherit qml-niri;
         };
       };
     };

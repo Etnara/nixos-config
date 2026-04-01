@@ -11,6 +11,7 @@
     ./dunst.nix
     ./hyprlock.nix
     ./wlogout.nix
+    ./quickshell
 
     ./hyprpolkitagent.nix
     ./xdg.nix
