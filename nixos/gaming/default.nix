@@ -14,6 +14,7 @@
     prismlauncher
     (retroarch.withCores (cores: with cores; [
       fbneo
+      ppsspp
     ]))
   ];
 
