@@ -40,6 +40,7 @@
     sshfs
     nvd # Nix diff for number of package updates widget
     caligula # Burning ISOs
+    usbutils # lsusb
   ];
 
 }
