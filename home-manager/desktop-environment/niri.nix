@@ -133,6 +133,11 @@
         "Mod+Ctrl+S".action.screenshot-screen = [ ];
         "Mod+Shift+S".action.screenshot-window = [ ];
 
+        "XF86AudioRaiseVolume".action.spawn       = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@"  "1%+"   ];
+        "XF86AudioLowerVolume".action.spawn       = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@"  "1%-"   ];
+        "Shift+XF86AudioRaiseVolume".action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "10%+"   ];
+        "Shift+XF86AudioLowerVolume".action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "10%-"   ];
+        "XF86AudioMute".action.spawn              = [ "wpctl" "set-mute"   "@DEFAULT_AUDIO_SINK@" "toggle" ];
       };
 
     };
