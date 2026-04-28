@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
 
@@ -10,7 +10,7 @@
   environment.systemPackages = with pkgs; [
     lutris
     mangohud
-    osu-lazer-bin
+    pkgs-unstable.osu-lazer-bin
     prismlauncher
     (retroarch.withCores (cores: with cores; [
       fbneo
