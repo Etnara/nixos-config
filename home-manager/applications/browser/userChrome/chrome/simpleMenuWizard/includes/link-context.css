@@ -10,8 +10,10 @@
 
 /* #context-openlinkintab,                 /* Open Link in New Tab             */
 #context-openlinkinusercontext-menu,       /* Open Link in New Container Tab   */
+#context-openlinkinsplitview,              /* Open Link in Split View          */
 #context-openlink,                         /* Open Link in New Window          */
 /* #context-openlinkprivate,               /* Open Link in New Private Window  */
+#context-previewlink,                      /* Preview Link                     */
 /* #context-sep-open,                      /************ Separator *************/
 #context-bookmarklink,                     /* Bookmark Link                    */
 #context-savelink,                         /* Save Link As…                    */
@@ -24,7 +26,7 @@
 /* #context-sep-copylink,                  /************ Separator *************/
 /* #context-searchselect,                  /* Search [Google] for "[selected]" */
 #context-searchselectprivate,
-#context-translate-selection
+#context-translate-selection,
 /* #frame-sep,                             /************ Separator *************/
 /* #context-inspect,                       /* Inspect (Q)                      */
 

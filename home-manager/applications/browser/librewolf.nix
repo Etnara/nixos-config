@@ -46,6 +46,8 @@
         "media.eme.enabled" = true;
         # Container Tabs
         "privacy.userContext.enabled" = false;
+        # Split View
+        "browser.tabs.splitView.enabled" = false;
         # Dark Mode
         "browser.theme.content-theme" = 0;
         "browser.theme.toolbar-theme" = 0;

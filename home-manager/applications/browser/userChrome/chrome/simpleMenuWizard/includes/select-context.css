@@ -10,6 +10,8 @@
 
 /* #context-openlinkincurrent,            /* Open Link                        */
 /* #context-copy,                         /* Copy                             */
+#context-copy-link-to-highlight,          /* Copy Link to Highlight           */
+#context-copy-clean-link-to-highlight,    /* Copy Clean Link to Highlight     */
 #context-selectall,                       /* Select All                       */
 #context-print-selection,                 /* Print Selection                  */
 #context-sep-selectall,                   /************ Separator *************/
