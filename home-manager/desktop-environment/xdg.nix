@@ -43,6 +43,7 @@ in
         "image/tiff" = "feh.desktop";
       };
     };
+    terminal-exec.enable = true; # Fixes launching terminal apps like nvim from GUI
   };
 
   home.sessionVariables.EDITOR = "nvim";
