@@ -15,6 +15,7 @@
     rocmSupport = systemSettings.gpuType == "amd";
   };
   nix.package = pkgs.nix;
+  nix.settings.warn-dirty = false;
   news.display = "silent";
 
   imports = [

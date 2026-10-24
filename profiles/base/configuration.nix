@@ -14,6 +14,7 @@
       substituters = [ "https://cache.nixos-cuda.org" ];
       trusted-public-keys = [ "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M=" ];
       download-buffer-size = 1073741824; # 1 GiB
+      warn-dirty = false;
     };
     gc = {
       automatic = true;
