@@ -1,0 +1,124 @@
+{
+	"User information": {"type": "label"},
+	"username":	{
+		"type": "text",
+		"label": "Username (max 8 characters)",
+		"default": "GUEST"
+	},
+
+	"separator_a": {},
+
+	"MSG":	{
+			"type": "text",
+			"label": "Message (max 8 characters)",
+			"default": "Hellooooooo"
+		},
+
+	"separator_b": {},
+	"Animations": {"type": "label"},
+	
+	"animations_affectWithBPM": {
+		"type": "bool",
+		"label": "Affect speed of some animations with the current song's BPM",
+		"default": false
+	},
+
+	"animations_skipIntro": {
+		"type": "bool",
+		"label": "Skip intro splash screens",
+		"default": false
+	},
+
+	"separator_c": {},
+	
+	"Crew": { "type": "label" },
+	"single_idol": {
+		"label": "Crew idol animations, folder name in `crew/anim/`",
+		"type": "text",
+		"default": "nothing"
+	},
+
+	"words": {
+		"type": "selection",
+		"label": "Language",
+		"default": "EN",
+		"values": ["EN", "DE", "SK", "test2"]
+	},
+
+	"separator_d": {},
+	"Audio": { "type": "label" },
+
+	"audio_systemVoice": {
+		"label": "Turn on Rasis",
+		"type": "bool",
+		"default": false
+	},
+
+	"separator_e": {},
+	"Gameplay": { "type": "label" },
+
+	"gameplay_ucDifferentColor": {
+		"label": "Use different colors for UC and PUC chain numbers",
+		"type": "bool",
+		"default": false
+	},
+	
+	"gameplay_showSearchControls": {
+		"label": "Show song select controls when searching",
+		"type": "bool",
+		"default": true
+	},
+
+	"gameplay_earlyLateFor": {
+		"label": "Show Early/Late display for",
+		"type": "selection",
+		"default": "NEAR (or worse)",
+		"values": ["CRITICAL (or worse)", "NEAR (or worse)", "OFF"]
+	},
+
+	"gameplay_earlyLatePosition": {
+		"label": "Early/Late display position",
+		"type": "selection",
+		"default": "STANDARD",
+		"values": ["UPPER+", "UPPER", "STANDARD", "LOWER"]
+	},
+
+	"gameplay_msFor": {
+		"label": "Show millisecond display for",
+		"type": "selection",
+		"default": "NEAR (or worse)",
+		"values": ["ALL", "CRITICAL (or worse)", "NEAR (or worse)", "NONE"]
+	},
+
+	"separator_f": {},
+	"Debug": { "type": "label" },
+
+	"debug_showInformation": {
+		"label": "Show debug information (sometimes in the middle of the screen when you're playing)",
+		"type": "bool",
+		"default": false
+	},
+	
+	"separator_g": {},
+	"Experimental features": { "type": "label" },
+
+	"songselect_showEffectRadar": {
+		"label": "Show Effect Radar for compatible songs (VERY WIP)",
+		"type": "bool",
+		"default": false
+	},
+
+	"songselect_enableTimer": {
+		"label": "Display a countdown timer until a demo is played, when available (Buggy)",
+		"type": "bool",
+		"default": false
+	},
+
+	"songselect_freezeTimer": {
+		"label": "Freeze timer on value (in seconds, -1 to disable)",
+		"type": "int",
+		"default": -1,
+		"min": -1,
+		"max": 5999
+	}
+}

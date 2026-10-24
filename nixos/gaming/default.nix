@@ -5,6 +5,8 @@
   imports = [
     ./steam.nix
     ./alvr.nix
+    ./etterna
+    ./unnamed-sdvx-clone
   ];
 
   environment.systemPackages = with pkgs; [
