@@ -7,7 +7,7 @@
 
   programs.firejail.wrappedBinaries.packettracer9 = {
     executable = lib.getExe pkgs-unstable.cisco-packet-tracer_9;
-    extraArgs = [ "--net=none" "--noprofile" ];
+    extraArgs = [ "--net=none" "--private=~/.config/" "--noprofile" ];
   };
 
 }
