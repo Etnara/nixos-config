@@ -1,4 +1,4 @@
-{ pkgs, userSettings, systemSettings, ... }:
+{ pkgs, userSettings, systemSettings, helium, ... }:
 
 {
 
@@ -26,7 +26,7 @@
   home.packages = with pkgs; [
     nautilus
     discord
-    brave
+    helium.packages.${pkgs.stdenv.hostPlatform.system}.default
     libreoffice-qt
     kdePackages.kdenlive
     baobab

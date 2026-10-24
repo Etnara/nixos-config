@@ -14,9 +14,11 @@
     qml-niri.url = "github:imiric/qml-niri/main";
     qml-niri.inputs.nixpkgs.follows = "nixpkgs";
     qml-niri.inputs.quickshell.follows = "quickshell";
+    helium.url = "github:AlvaroParker/helium-nix";
+    helium.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, nixpkgs-unstable, home-manager, stylix, catppuccin, niri, ... }:
+  outputs = { nixpkgs, nixpkgs-unstable, home-manager, stylix, catppuccin, niri, quickshell, qml-niri, helium, ... }:
   let
     # ---- SYSTEM SETTINGS ---- #
     systemSettings = {
@@ -96,6 +98,7 @@
           inherit secrets;
           inherit pkgs-unstable;
           inherit qml-niri;
+          inherit helium;
         };
       };
     };
