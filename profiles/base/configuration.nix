@@ -41,6 +41,7 @@
     nvd # Nix diff for number of package updates widget
     caligula # Burning ISOs
     usbutils # lsusb
+    jmtpfs # Mounting a phone's storage to a folder: jmtpfs ~/.phone
   ];
 
 }
