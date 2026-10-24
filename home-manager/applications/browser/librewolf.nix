@@ -25,6 +25,10 @@
       "sidebar.verticalTabs" = true;
       "sidebar.position_start" = false;
       "sidebar.verticalTabs.dragToPinPromo.dismissed" = true;
+      # This just hides the option in the settings menu. It doesn't affect the behaviour.
+      # "sidebar.expandOnHover" = false;
+      # Stop annoying pop-ups asking for access to local network devices
+      "permissions.default.local-network" = 2;
     };
 
     policies = {
