@@ -5,6 +5,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = false; # Needed for withUWSM. https://wiki.hyprland.org/Useful-Utilities/Systemd-start/
+    configType = "lua";
 
     settings = {
       "$mod" = "SUPER";

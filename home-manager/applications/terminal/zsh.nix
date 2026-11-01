@@ -1,4 +1,4 @@
-{ systemSettings, userSettings, ... }:
+{ config, systemSettings, userSettings, ... }:
 
 {
 
@@ -7,7 +7,9 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     enableCompletion = true;
+    dotDir = "${config.xdg.configHome}/zsh";
     shellAliases = {
+      l = "y"; # l is already bound to something from /etc/zshrc, so I have to rebind it like this to make yazi work
       ls = "eza";
       ssh = "kitten ssh";
       ne = "cd ~/.dotfiles; tmux new-session 'nvim' \\; new-window '$SHELL' \\; select-window -t 0";
@@ -15,7 +17,6 @@
       nr = "sudo nixos-rebuild switch --flake ~/.dotfiles#${systemSettings.hostname}";
       nh = "home-manager switch --flake ~/.dotfiles#${userSettings.username} --impure --show-trace";
       nd = "nix develop ~/.dotfiles -c $SHELL";
-      l = "yy";
       gs = "git status";
       gl = "git log";
       glo = "git log --oneline";
@@ -197,23 +198,6 @@
       #   crust = "#11111b";
       # };
     };
-  };
-
-  programs.yazi = {
-    enable = true;
-    enableZshIntegration = true;
-  };
-  programs.yazi.keymap = {
-    mgr.prepend_keymap = [
-      { on = [ "g" "/" ]; run = "cd /"; desc = "Go /"; }
-      { on = [ "g" "l" ]; run = "cd ~/.local/share"; desc = "Go ~/.local/share"; }
-      { on = [ "g" "c" ]; run = "cd ~/.dotfiles"; desc = "Go ~/.dotfiles"; }
-      { on = [ "g" "C" ]; run = "cd ~/.config"; desc = "Go ~/.config"; }
-      { on = [ "g" "a" ]; run = "cd ~/Aurora"; desc = "Go Aurora"; }
-      { on = [ "g" "p" ]; run = "cd ~/Aurora/Backups/Pictures || cd ~/Pictures"; desc = "Go Pictures"; }
-      { on = [ "g" "v" ]; run = "cd ~/Aurora/Backups/Videos || cd ~/Videos"; desc = "Go Videos"; }
-      { on = [ "g" "g" ]; run = "cd ~/Documents/Games"; desc = "Go Games"; }
-    ];
   };
 
 }

@@ -20,7 +20,6 @@
     obs.enable = true;
     starship.enable = true;
     tmux.enable = true;
-    yazi.enable = true;
     zathura.enable = true;
     zsh-syntax-highlighting.enable = true;
   };

@@ -6,7 +6,6 @@
     ./hyprland.nix
     ./niri.nix
     ./waybar
-    ./hyprpaper.nix
     ./rofi
     ./dunst.nix
     ./hyprlock.nix

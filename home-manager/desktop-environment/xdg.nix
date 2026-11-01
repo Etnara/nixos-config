@@ -10,15 +10,19 @@ in
     userDirs = {
       enable = true;
       createDirectories = true;
+      setSessionVariables = false;
       desktop     = "${homeDirectory}/Desktop";
       documents   = "${homeDirectory}/Documents";
       download    = "${homeDirectory}/Downloads";
+      projects    = "${homeDirectory}/Projects";
       pictures    = "${homeDirectory}/Pictures";
       videos      = "${homeDirectory}/Videos";
       music       = "${homeDirectory}/Music";
       templates   = null;
       publicShare = null;
     };
+    binHome = "${homeDirectory}/Projects/!PATH";
+    localBinInPath = true;
     mime.enable = true;
     mimeApps = {
       enable = true;
@@ -55,8 +59,7 @@ in
     "d ${homeDirectory}/Pictures/Art 0755 - - - -"
     "d ${homeDirectory}/Pictures/Memes 0755 - - - -"
     "d ${homeDirectory}/Pictures/Screenshots 0755 - - - -"
-    "d ${homeDirectory}/Documents/Games 0755 - - - -"
-    "d ${homeDirectory}/Documents/Git 0755 - - - -"
+    "d ${homeDirectory}/Games 0755 - - - -"
     "d ${homeDirectory}/Documents/VMs 0755 - - - -"
     "d ${homeDirectory}/.remote 0755 - - - -"
   ];

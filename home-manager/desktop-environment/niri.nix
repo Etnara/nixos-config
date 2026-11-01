@@ -2,7 +2,8 @@
 
 {
 
-  home.packages = [ pkgs.swaybg ];
+  home.packages = with pkgs; [ swaybg ];
+  services.awww.enable = true; # Starts awww-daemon
 
   programs.niri = {
     enable = true;
@@ -54,7 +55,7 @@
       spawn-at-startup = [
         { argv = [ "waybar" ]; }
         { argv = [ "dunst" ]; }
-        { argv = [ "hyprpaper" ]; }
+        { argv = [ "awww" "img" "${../theme/configs/wallpaper.jpg}" ]; }
         { argv = [ "swaybg" "--image" "${../theme/configs/wallpaper_blurred.jpg}" ]; }
         { argv = [ "keepassxc" ]; }
         { argv = [ "obs" "--startreplaybuffer" "--minimize-to-tray" "--disable-shutdown-check" ]; }

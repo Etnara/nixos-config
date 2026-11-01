@@ -24,6 +24,8 @@
       # libtexprintf # Multiline LaTeX (No Package, try Distrobox)
       kdePackages.qtdeclarative # qmlls
     ];
+    withPython3 = false;
+    withRuby = false;
   };
 
   home.file.".config/nvim".source = ./.;

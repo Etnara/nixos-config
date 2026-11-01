@@ -42,6 +42,7 @@
         "browser.translations.enable" = false;
         "general.autoScroll" = true;
         "browser.toolbars.bookmarks.visibility" = "newtab";
+        # "browser.nova.enabled" = false; # Firefox Colour Catppuccin theming does not work after disabling Nova update
         # userChrome.css customisation
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         # Stop alt key from spawning menu bar
